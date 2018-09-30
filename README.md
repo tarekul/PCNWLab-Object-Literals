@@ -1,4 +1,4 @@
-# PCNWLab Object Literals
+# PCNWLab Object Literals (~12 problems)
 Object literals topic
 
 To complete this lab, do the following:
