@@ -16,6 +16,18 @@
             age: 31
         }
 */
+getSuperHero = (name,alterEgoName,isVillain,age) => {
+    const superHero = {
+        name,
+        alterEgoName,
+        isVillain,
+        age
+    }
+    return superHero
+}
+console.log(getSuperHero('Batman', 'Bruce Wayne', false, 31));
+console.log("---------updateSuperHero-------");
+
 
 /*
     @func updateSuperHero
@@ -42,6 +54,21 @@
             likesBats: true
         }
 */
+const batman = {
+    name: 'Batman',
+    alterEgoName: 'Bruce Wayne',
+    isVillain: false,
+    age: 31
+}
+
+UpdatedSuperHero = (obj, keyName, keyValue) => {
+    obj[keyName] = keyValue;
+    
+}
+UpdatedSuperHero(batman, 'likesBats', true);
+console.log(batman);
+
+
 
 /*
     @func updateSuperHeroAction
@@ -71,6 +98,15 @@
             }
         }   
 */
+function updateSuperHeroAction(superHero,actionName,actionFunc){
+    superHero[actionName] = actionFunc
+}
+
+updateSuperHeroAction(batman, 'saySomething', function saySomething() {
+    return "I'm Batman";
+});
+
+console.log(batman);
 
 /*
     @func updateSuperHeroInBulk
@@ -110,4 +146,23 @@
         }     
 */
 
+updateSuperHeroInBulk = (superHero,properties) =>{
+    for(let i =0;i<properties.length;i+=2){
+        key = properties[i]
+        value = properties[i+1]
+        superHero[key] = value 
+    }
+}
 
+updateSuperHeroInBulk(batman, [
+    'saySomething', 
+    function saySomething() {
+        return "I'm Batman";
+    },
+    'likesBats',
+    true,
+    'isRich',
+    true
+]);
+
+console.log(batman);
